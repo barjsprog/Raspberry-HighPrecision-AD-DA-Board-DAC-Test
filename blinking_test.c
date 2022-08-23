@@ -11,11 +11,6 @@ static void DEV_GPIOConfig(void)
     pinMode(DEV_CS_PIN, OUTPUT);
 }
 
-/******************************************************************************
-function:	Module Initialize, the BCM2835 library and initialize the pins, SPI protocol
-parameter:
-Info:
-******************************************************************************/
 int DEV_ModuleInit(void)
 {
     //1.wiringPiSetupGpio
@@ -97,8 +92,8 @@ int main(void)
 
     printf("Program start\r\n");
 
-    DAC8532_Out_Voltage(channel_A,3); delay(500);
-	DAC8532_Out_Voltage(channel_B,3);
+    DAC8532_Out_Voltage(channel_A,3.3);  #voltage put here
+	DAC8532_Out_Voltage(channel_B,0);
     return 0;
 }
 
